@@ -7,15 +7,15 @@ import pytesseract
 root = Tk(  )
 
 def readFimage():
-    path = T1.get('1.0','end-1c')
+    path = PathTextBox.get('1.0','end-1c')
     if path:
         im = Image.open(path)
         text = pytesseract.image_to_string(im, lang = 'eng')
-        T2.delete('1.0',END)
-        T2.insert(END,text)
+        ResultTextBox.delete('1.0',END)
+        ResultTextBox.insert(END,text)
     else:
-        T2.delete('1.0',END)
-        T2.insert(END,"FILE CANNOT BE READ")
+        ResultTextBox.delete('1.0',END)
+        ResultTextBox.insert(END,"FILE CANNOT BE READ")
     
 
 def OpenFile():
@@ -23,36 +23,36 @@ def OpenFile():
                            filetypes =(("PNG File", "*.png"),("BMP File", "*.bmp"),("JPEG File", "*.jpeg")),
                            title = "Choose a file."
                            ) 
-    T1.delete("1.0",END)
-    T1.insert(END,name)
+    PathTextBox.delete("1.0",END)
+    PathTextBox.insert(END,name)
 Title = root.title( "Image Reader!")
 path = StringVar()
 
-L01 = Label(root,text="Image ")
-L01.grid(row = 1,column = 1,sticky=(E))
-L02 = Label(root,text=" Reader")
-L02.grid(row = 1,column = 2,sticky=(W))
+HeadLable1 = Label(root,text="Image ")
+HeadLabel1.grid(row = 1,column = 1,sticky=(E))
+HeadLabel2 = Label(root,text=" Reader")
+HeadLabel2.grid(row = 1,column = 2,sticky=(W))
 
-L2 = Label(root,text = "INPUT IMAGE:")
-L2.grid(row=2,column = 1)
+InputLabel = Label(root,text = "INPUT IMAGE:")
+InputLabel.grid(row=2,column = 1)
 
-B1 = Button(root,text="Browse",command = OpenFile)
-B1.grid(row=2,column=2)
+BrowseButton = Button(root,text="Browse",command = OpenFile)
+BrowseButton.grid(row=2,column=2)
 
-L3 = Label(root,text = "Path:")
-L3.grid(row = 3,column=1,sticky=(W))
+PathLabel = Label(root,text = "Path:")
+PathLabel.grid(row = 3,column=1,sticky=(W))
 
-T1 = Text(root,height = 2)
-T1.grid(row = 4,column = 1,columnspan=2)
+PathTextBox = Text(root,height = 2)
+PathTextBox.grid(row = 4,column = 1,columnspan=2)
 
-B2 = Button(root,text="READ FROM IMAGE",command = readFimage)
-B2.grid(row = 5,column = 2)
+ReadButton = Button(root,text="READ FROM IMAGE",command = readFimage)
+ReadButton.grid(row = 5,column = 2)
 
-L4 = Label(root,text = "DATA IN IMAGE:")
-L4.grid(row = 6,column=1,sticky=(W))
+DataLabel = Label(root,text = "DATA IN IMAGE:")
+DataLabel.grid(row = 6,column=1,sticky=(W))
 
-T2 = Text(root,height = 6)
-T2.grid(row = 7,column = 1,columnspan=2)
+ResultTextBox = Text(root,height = 6)
+ResultTextBox.grid(row = 7,column = 1,columnspan=2)
 
 
 
