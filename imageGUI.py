@@ -19,7 +19,7 @@ def readFimage():
     
 
 def OpenFile():
-    name = askopenfilename(initialdir="/media/akshay/CC8A9DC68A9DAE08/Linux Share/Python/Image GUI Project",
+    name = askopenfilename(initialdir="/",
                            filetypes =(("PNG File", "*.png"),("BMP File", "*.bmp"),("JPEG File", "*.jpeg")),
                            title = "Choose a file."
                            ) 
