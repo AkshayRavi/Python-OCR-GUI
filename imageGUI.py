@@ -20,7 +20,7 @@ def readFimage():
 
 def OpenFile():
     name = askopenfilename(initialdir="/",
-                           filetypes =(("PNG File", "*.png"),("BMP File", "*.bmp"),("JPEG File", "*.jpeg")),
+                           filetypes =(("PNG File", "*.png"),("BMP File", "*.bmp"),("JPEG File", "*.jpg")),
                            title = "Choose a file."
                            ) 
     PathTextBox.delete("1.0",END)
