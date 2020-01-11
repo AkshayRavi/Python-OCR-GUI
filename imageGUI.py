@@ -28,7 +28,7 @@ def OpenFile():
 Title = root.title( "Image Reader!")
 path = StringVar()
 
-HeadLable1 = Label(root,text="Image ")
+HeadLabel1 = Label(root,text="Image ")
 HeadLabel1.grid(row = 1,column = 1,sticky=(E))
 HeadLabel2 = Label(root,text=" Reader")
 HeadLabel2.grid(row = 1,column = 2,sticky=(W))
